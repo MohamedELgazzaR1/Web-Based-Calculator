@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Import axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+  <body>
+    <div id="app">
+      <div id="calculator">  
+      				<div id="result">
+					<div id="previous">
+						<p id="previousVal">{{hist}}</p>
+					</div>
+					<div id="output">
+						<p id="outputVal">{{show}}</p>
+          </div>
+              
+            <button class="button" v-on:click="doUniOp('%')">%</button>
+            <button class="button" v-on:click="removeCurr">CE</button>
+            <button class="button" v-on:click="removeAll">C</button> 
+            <button class="button" v-on:click="remove">⌫</button>
+            <button class="button" v-on:click="doUniOp('1/x')">1/x</button>
+            <button class="button" v-on:click="doUniOp('x²')">x²</button>
+            <button class="button" v-on:click="doUniOp('√x')" >√x</button>
+            <button class="button" v-on:click="doArethmatic('÷')">÷</button>
+            <button class="button" id="number" v-on:click="concatenate('7',false)">7</button>
+            <button class="button" id="number" v-on:click="concatenate('8',false)">8</button>
+            <button class="button" id="number" v-on:click="concatenate('9',false)">9</button>
+            <button class="button"  v-on:click="doArethmatic('x')">x</button>
+            <button class="button" id="number" v-on:click="concatenate('4',false)">4</button>
+            <button class="button" id="number" v-on:click="concatenate('5',false)">5</button>
+            <button class="button" id="number" v-on:click="concatenate('6',false)">6</button>
+            <button class="button"   v-on:click="doArethmatic('-')">-</button>
+            <button class="button" id="number" v-on:click="concatenate('1',false)">1</button>
+            <button class="button" id="number" v-on:click="concatenate('2',false)">2</button>
+            <button class="button"  id="number" v-on:click="concatenate('3',false)">3</button>
+            <button class="button" v-on:click="doArethmatic('+')">+</button>
+            <button class="button" id="number" v-on:click="doUniOp('+/-')">+/-</button>
+            <button class="button" id="number" v-on:click="concatenate('0',false)">0</button>
+            <button class="button" id="number" v-on:click="concatenate(46,true)">.</button>                    
+            <button class="button" id="eq" v-on:click="equal(false)">=</button>    
+          
+      </div>
+    </div>
+
+
+    <!-- Import App -->
+     <script src="./main.js" type="text/javascript" ></script> 
+        
+        <!-- Mount App -->
+    <script >
+      const mountedApp = app.mount('#app')
+    </script>
+        
+  </body>
+</html>
